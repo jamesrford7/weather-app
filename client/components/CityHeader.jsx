@@ -1,5 +1,5 @@
 import React from 'react';
 
-export default function CityHeader (props) {
-  return (<h3>{props.cityName}</h3>);
+export default function CityHeader(props) {
+  return(<h2>{props.cityName}</h2>);
 }
