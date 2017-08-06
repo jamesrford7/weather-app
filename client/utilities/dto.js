@@ -11,10 +11,11 @@ export function convertToDto(data) {
   });
 
   uniqueDates.forEach(date => {
-    dto.weatherRows.push({date: date});
+    let splitDate = date.split('-');
+    let dateObject = new Date(splitDate[0], splitDate[1] - 1, splitDate[2]);
+    dto.weatherRows.push({date: dateObject.toDateString()});
   });
 
   dto.cityName = data.city.name;
-
   return dto;
 }
