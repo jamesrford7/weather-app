@@ -9,7 +9,8 @@ describe('CityDropDown', () => {
     {key: 1, name: 'Leeds'},
     {key: 2, name: 'Manchester'},
     {key: 3, name: 'London'},
-    {key: 4, name: 'Liverpool'}];
+    {key: 4, name: 'Liverpool'}
+  ];
 
   beforeAll(() => {
     sut = shallow(<CityDropDown cities={cities} />);
