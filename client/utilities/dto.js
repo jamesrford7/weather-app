@@ -2,7 +2,9 @@ export function convertToDto(data) {
   let dto = {};
   dto.weatherRows = generateDates(data);
 
+  let id = 0;
   dto.weatherRows.forEach(weatherRow => {
+    weatherRow.id = id++;
     weatherRow.timeAndTemps = generateDateTimes(data, weatherRow);
   });
 
