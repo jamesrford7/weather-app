@@ -13,11 +13,7 @@ describe('DTO', () => {
     expect(result.cityName).toEqual('Moscow');
   });
 
-  it('should return 5 weather rows with 5 discrete dates', () => {
-    expect(dateList.length).toEqual(5);
-  });
-
-  it('should convert the dates to date strings', () => {
+  it('should return 5 unique dates that have been converted to a date string', () => {
     const expectedDateStrings = [
       'Sun Aug 06 2017',
       'Mon Aug 07 2017',

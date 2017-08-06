@@ -1,3 +1,5 @@
+const config = require('../config/config');
+
 export function convertToDto(data) {
   let dto = {};
   dto.weatherRows = generateDates(data);
@@ -5,11 +7,10 @@ export function convertToDto(data) {
   let id = 0;
   dto.weatherRows.forEach(weatherRow => {
     weatherRow.id = id++;
-    weatherRow.timeAndTemps = generateDateTimes(data, weatherRow);
+    weatherRow.timeAndTemps = generateDateAndTemps(data, weatherRow);
   });
 
   dto.cityName = data.city.name;
-  console.log(dto);
   return dto;
 }
 
@@ -33,7 +34,7 @@ function generateDates(data) {
   return result;
 }
 
-function generateDateTimes(data, weatherRow) {
+function generateDateAndTemps(data, weatherRow) {
   let result = [];
 
   let currentDate = weatherRow.datestamp;
@@ -47,7 +48,7 @@ function generateDateTimes(data, weatherRow) {
         dt: dt,
         time: time,
         temp: temp,
-        icon: icon
+        icon: `${config.imgBase}${icon}${config.imgExtension}`
       });
     }
   });

@@ -1,34 +1,16 @@
 import React from 'react';
 import CityHeader from './weather/headers/CityHeader.jsx';
 import WeatherApp from './weather/WeatherApp.jsx';
+import { convertToDto } from '../utilities/dto';
+
+const data = require('../mock-data/mock-data.json');
 
 export default class App extends React.Component {
   render() {
 
     const icon = 'http://openweathermap.org/img/w/01d.png';
 
-    const weatherGrid = {
-      weatherRows: [
-        {
-          id: 1,
-          date: 'Sat Dec 15 2007',
-          timeAndTemps: [
-            {dt: 1234, time: '9AM', temp: '15', icon: icon},
-            {dt: 3213, time: '12AM', temp: '12', icon: icon},
-            {dt: 3634, time: '3PM', temp: '22', icon: icon}
-          ]
-        },
-        {
-          id: 2,
-          date: 'Sat Dec 16 2007',
-          timeAndTemps: [
-            {dt: 8789, time: '9AM', temp: '22', icon: icon},
-            {dt: 8732, time: '12AM', temp: '32', icon: icon},
-            {dt: 9877, time: '3PM', temp: '2', icon: icon}
-          ]
-        }
-      ]
-    };
+    const weatherGrid = convertToDto(data);
 
     const cities = [
       {key: 1, name: 'Leeds'},
