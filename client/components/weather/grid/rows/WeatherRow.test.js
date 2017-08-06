@@ -11,8 +11,14 @@ describe('WeatherRow', () => {
     {dt: 3634, time: '3PM', temp: '22'}
   ];
 
+  const date = {
+    day: 'Mon',
+    month: 'Sept',
+    date: '3'
+  };
+
   beforeAll(() => {
-    sut = shallow(<WeatherRow day='Mon' month='Sept' date='3' timeAndTemps={timeAndTemps} />);
+    sut = shallow(<WeatherRow date={date} timeAndTemps={timeAndTemps} />);
   });
 
   it('should contain a DateCell', () => {
@@ -20,10 +26,10 @@ describe('WeatherRow', () => {
   });
 
   it('should set the correct values in the DateCell', () => {
-    const dataCellProps = sut.find('DateCell').props();
-    expect(dataCellProps.day).toEqual('Mon');
-    expect(dataCellProps.month).toEqual('Sept');
-    expect(dataCellProps.date).toEqual('3');
+    const dateCellProps = sut.find('DateCell').props();
+    expect(dateCellProps.day).toEqual('Mon');
+    expect(dateCellProps.month).toEqual('Sept');
+    expect(dateCellProps.date).toEqual('3');
   });
 
   it('should create the correct amount of TimeAndTempCells', () => {
