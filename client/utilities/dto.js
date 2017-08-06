@@ -7,7 +7,7 @@ export function convertToDto(data) {
   let id = 0;
   dto.weatherRows.forEach(weatherRow => {
     weatherRow.id = id++;
-    weatherRow.timeAndTemps = generateDateAndTemps(data, weatherRow);
+    weatherRow.timeAndTemps = generateTimeAndTemps(data, weatherRow);
   });
 
   dto.cityName = data.city.name;
@@ -34,7 +34,7 @@ function generateDates(data) {
   return result;
 }
 
-function generateDateAndTemps(data, weatherRow) {
+function generateTimeAndTemps(data, weatherRow) {
   let result = [];
 
   let currentDate = weatherRow.datestamp;

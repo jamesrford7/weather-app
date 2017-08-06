@@ -17,8 +17,7 @@ export default class WeatherApp extends React.Component {
     };
 
     this.state = {
-      dto: null,
-      cities: this.cities
+      dto: null
     };
   }
 
