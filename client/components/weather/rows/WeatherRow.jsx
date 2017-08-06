@@ -1,6 +1,6 @@
 import React from 'react';
-import DateCell from './DateCell.jsx';
-import TimeAndTempCell from './TimeAndTempCell.jsx';
+import DateCell from './cells/DateCell.jsx';
+import TimeAndTempCell from './cells/TimeAndTempCell.jsx';
 
 export default function WeatherRow(props){
   const timeAndTemps = props.timeAndTemps.map((timeAndTemp) => {
