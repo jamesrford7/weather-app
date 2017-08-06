@@ -1,5 +1,7 @@
 {
   "imgBase": "http://openweathermap.org/img/w/",
   "imgExtension": ".png",
-  "apiKey": "fd42d0aa938eacf93e3abf8d55cf784d"
+  "apiKey": "fd42d0aa938eacf93e3abf8d55cf784d",
+  "apiBase": "http://api.openweathermap.org/data/2.5/forecast",
+  "units": "metric"
 }
