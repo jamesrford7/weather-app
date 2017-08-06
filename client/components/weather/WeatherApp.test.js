@@ -5,7 +5,7 @@ import WeatherApp from './WeatherApp';
 describe('WeatherApp', () => {
   let sut;
 
-  const weatherGrid = {
+  const dto = {
     weatherRows: [
       {
         id: 1,
@@ -28,15 +28,21 @@ describe('WeatherApp', () => {
     ]
   };
 
-  const cities = [
-    {key: 1, name: 'Leeds'},
-    {key: 2, name: 'Manchester'},
-    {key: 3, name: 'London'},
-    {key: 4, name: 'Liverpool'}
-  ];
+  const cities = {
+    data: [
+      {key: 1, name: 'Leeds'},
+      {key: 2, name: 'Manchester'},
+      {key: 3, name: 'London'},
+      {key: 4, name: 'Liverpool'}
+    ],
+    callback: () => {}
+  };
 
   beforeAll(() => {
-    sut = shallow(<WeatherApp weatherGrid={weatherGrid} cities={cities} cityName={cities[0]}/>);
+    sut = shallow(<WeatherApp weatherGrid={dto} cities={cities} cityName={cities[0]}/>);
+    sut.setState({
+      dto: dto
+    });
   });
 
   it('should have a CityHeader', () => {

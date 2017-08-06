@@ -5,12 +5,15 @@ import CityDropDown from './CityDropDown';
 describe('CityDropDown', () => {
   let sut;
 
-  const cities = [
-    {key: 1, name: 'Leeds'},
-    {key: 2, name: 'Manchester'},
-    {key: 3, name: 'London'},
-    {key: 4, name: 'Liverpool'}
-  ];
+  const cities = {
+    data: [
+      {key: 1, name: 'Leeds'},
+      {key: 2, name: 'Manchester'},
+      {key: 3, name: 'London'},
+      {key: 4, name: 'Liverpool'}
+    ],
+    callback: jest.fn()
+  };
 
   beforeAll(() => {
     sut = shallow(<CityDropDown cities={cities} />);

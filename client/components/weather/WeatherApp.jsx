@@ -5,24 +5,30 @@ import CityHeader from './headers/CityHeader.jsx';
 import { convertToDto } from '../../utilities/dto';
 import { urlBuilder } from '../../utilities/urlBuilder';
 
+const config = require('../../config/config');
+
 export default class WeatherApp extends React.Component {
   constructor(props) {
     super(props);
 
+    this.cities = {
+      data: config.cities,
+      callback: this.changeCity.bind(this)
+    };
+
     this.state = {
-      dto: null
+      dto: null,
+      cities: this.cities
     };
   }
 
-  componentDidMount() {
-    fetch(urlBuilder('London,uk'),
+  changeCity(city) {
+    fetch(urlBuilder(city),
     {
       method: 'get'
     }).then((res) => {
       return res.json();
     }).then(res => {
-        console.log(res);
-        console.log(this.state);
         this.setState(
           {
             dto: convertToDto(res)
@@ -31,21 +37,18 @@ export default class WeatherApp extends React.Component {
       });
   }
 
-  render() {
+  componentDidMount() {
+    this.changeCity(this.cities.data[0].code);
+  }
 
-    const cities = [
-      {key: 1, name: 'Leeds'},
-      {key: 2, name: 'Manchester'},
-      {key: 3, name: 'London'},
-      {key: 4, name: 'Liverpool'}
-    ];
+  render() {
 
     if(this.state.dto != null) {
       return(
         <div>
           <CityHeader cityName={this.state.dto.cityName} />
           <WeatherGrid weatherRows={this.state.dto.weatherRows} />
-          <CityDropDown cities={cities} />
+          <CityDropDown cities={this.cities} />
         </div>
       );
     }

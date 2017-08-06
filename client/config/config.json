@@ -3,5 +3,15 @@
   "imgExtension": ".png",
   "apiKey": "fd42d0aa938eacf93e3abf8d55cf784d",
   "apiBase": "http://api.openweathermap.org/data/2.5/forecast",
-  "units": "metric"
+  "units": "metric",
+  "cities": [
+    {"key": 1, "name": "Leeds", "code": "Leeds,uk"},
+    {"key": 2, "name": "Manchester", "code": "Manchester,uk"},
+    {"key": 3, "name": "London", "code": "London,uk"},
+    {"key": 4, "name": "Liverpool", "code": "Liverpool,uk"},
+    {"key": 5, "name": "Bristol", "code": "Bristol,uk"},
+    {"key": 6, "name": "Edinburgh", "code": "Edinburgh,uk"},
+    {"key": 7, "name": "Newcastle", "code": "Newcastle,uk"},
+    {"key": 8, "name": "Cardiff", "code": "Cardiff,uk"}
+  ]
 }
