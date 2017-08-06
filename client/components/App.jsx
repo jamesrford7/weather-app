@@ -15,7 +15,7 @@ export default class App extends React.Component {
       <div style={{textAlign: 'center'}}>
         <CityHeader cityName='Leeds' />
         <DateCell day='Mon' month='Aug' date='2' />
-        <TimeAndTempCell time='9AM' temp='34' />
+        <TimeAndTempCell time='9AM' temp='34' icon='http://openweathermap.org/img/w/01d.png' />
         <WeatherRow day='Mon' month='Sept' date='3' timeAndTemps={timeAndTemps} />
       </div>);
   }
