@@ -8,9 +8,7 @@ describe('WeatherGrid', () => {
   const weatherRows = [
     {
       id: 1,
-      date: {
-        day: 'Mon', month: 'Aug', date: '07'
-      },
+      date: 'Sat Dec 15 2007',
       timeAndTemps: [
         {dt: 1234, time: '9AM', temp: '15'},
         {dt: 3213, time: '12AM', temp: '12'},
@@ -19,9 +17,7 @@ describe('WeatherGrid', () => {
     },
     {
       id: 2,
-      date: {
-        day: 'Tues', month: 'Aug', date: '08'
-      },
+      date: 'Sun Dec 16 2007',
       timeAndTemps: [
         {dt: 8789, time: '9AM', temp: '22'},
         {dt: 8732, time: '12AM', temp: '32'},

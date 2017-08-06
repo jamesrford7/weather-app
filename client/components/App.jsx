@@ -11,9 +11,7 @@ export default class App extends React.Component {
       weatherRows: [
         {
           id: 1,
-          date: {
-            day: 'Mon', month: 'Aug', date: '07'
-          },
+          date: 'Sat Dec 15 2007',
           timeAndTemps: [
             {dt: 1234, time: '9AM', temp: '15', icon: icon},
             {dt: 3213, time: '12AM', temp: '12', icon: icon},
@@ -22,9 +20,7 @@ export default class App extends React.Component {
         },
         {
           id: 2,
-          date: {
-            day: 'Tues', month: 'Aug', date: '08'
-          },
+          date: 'Sat Dec 16 2007',
           timeAndTemps: [
             {dt: 8789, time: '9AM', temp: '22', icon: icon},
             {dt: 8732, time: '12AM', temp: '32', icon: icon},
