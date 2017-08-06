@@ -41,8 +41,8 @@ function generateDateAndTemps(data, weatherRow) {
   data.list.forEach(item => {
     if(item.dt_txt.split(' ')[0] == currentDate) {
       let dt = item.dt;
-      let time = item.dt_txt.split(' ')[1];
-      let temp = item.main.temp;
+      let time = item.dt_txt.split(' ')[1].substring(0, 5);
+      let temp = Math.ceil(item.main.temp);
       let icon = item.weather[0].icon;
       result.push({
         dt: dt,

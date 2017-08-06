@@ -10,7 +10,7 @@ describe('TimeAndTempCell', () => {
   });
 
   it('should display the correct time and temperature', () => {
-    expect(sut.find('span').text()).toEqual('9AM -> 12 deg');
+    expect(sut.find('span').text()).toEqual('9AM 12' + String.fromCharCode(176));
   });
 
   it('should display the correct icon', () => {

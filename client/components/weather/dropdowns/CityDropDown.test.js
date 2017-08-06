@@ -22,4 +22,14 @@ describe('CityDropDown', () => {
   it('Should have the correct number of cities', () => {
     expect(sut.find('option').length).toEqual(4);
   });
+
+  it('Should call the callback upon change', () => {
+    const mockEvent = {
+      target: {
+        value: 'test'
+      }
+    };
+    sut.find('select').simulate('change', mockEvent);
+    expect(cities.callback).toHaveBeenCalled();
+  });
 });

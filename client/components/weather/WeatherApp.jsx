@@ -48,7 +48,7 @@ export default class WeatherApp extends React.Component {
         <div>
           <CityHeader cityName={this.state.dto.cityName} />
           <WeatherGrid weatherRows={this.state.dto.weatherRows} />
-          <CityDropDown cities={this.cities} />
+          Change City: <CityDropDown cities={this.cities} />
         </div>
       );
     }
