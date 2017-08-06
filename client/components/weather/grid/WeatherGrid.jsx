@@ -7,8 +7,10 @@ export default function WeatherGrid(props) {
   });
 
   return (
-    <div>
-      {weatherRows}
-    </div>
+    <table>
+      <tbody>
+        {weatherRows}
+      </tbody>
+    </table>
   );
 }

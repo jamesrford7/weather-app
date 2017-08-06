@@ -8,9 +8,9 @@ export default function WeatherRow(props){
   });
 
   return(
-    <div>
+    <tr>
       <DateCell day={props.date.day} month={props.date.month} date={props.date.date} />
       {timeAndTemps}
-    </div>
+    </tr>
   );
 }
